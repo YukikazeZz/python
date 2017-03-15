@@ -8,11 +8,8 @@ def count_words(filename):
     d={}
     with open(filename) as f:
         for line in f:
-            splitword=line.strip().split(':')
-            for word in splitword:
-                if word not in d:
-                    d.setdefault(word,1)
-                else:
+            for word in line.strip().split(':'):
+                    d.setdefault(word,0)
                     d[word] += 1
 
     for key,val in d.iteritems():
